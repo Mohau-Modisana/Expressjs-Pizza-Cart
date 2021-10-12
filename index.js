@@ -6,6 +6,10 @@ app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/img', express.static(__dirname + 'public/img'))
 
+// enable the req.body object - to allow us to use HTML forms
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars')
 
