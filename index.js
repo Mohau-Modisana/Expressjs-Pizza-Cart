@@ -3,8 +3,6 @@ let app = express();
 const exphbs  = require('express-handlebars');
 
 app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/css'))
-app.use('/img', express.static(__dirname + 'public/img'))
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -17,8 +15,8 @@ app.get("/", function(req, res){
     res.render('home');
   });
 
-app.post('/Bsmall', function(req, res){
-
+app.post('/Cart', function(req, res){
+    res.render('Cart');
 
 });
 
