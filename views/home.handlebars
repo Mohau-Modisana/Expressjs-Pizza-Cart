@@ -68,7 +68,7 @@
         <button type="button" name="button" class="checkout theButton paybox">Order</button>
        </div>
 
-    <div class="hide ">
+    {{!-- <div class="hide ">
        <div>
            <span>
          Payment amount:      
@@ -80,11 +80,12 @@
        <div>
         <button type="button" name="button" class="theButton pay paybox">Pay</button>
        </div>
-    </div>
+    </div> --}}
 </div>
 
     <div class="All_Pizzas">
 
+    <form action="/Bsmall" method="Post">
         <div class="box Small_pizza"> 
             <h2 class="center">Small Pizza</h2>
             <img src="img/pizza.png" width="75" >
@@ -96,10 +97,12 @@
                 Get a 20cm small pizza that has almost everything, from scrumptious vegetables to hearty meat products. Enjoy the taste of this pizza!
             </div>
             <div class="center">
-                <button type="button" name="button" class="theButton buysmall">Buy</button>
+                <button type="submit" name="button" class="theButton buysmall">Buy</button>
             </div>
         </div>
+    </form>
     
+    <form action="/Bmedium" method="Post"></form>
        <div class="box Medium_pizza">
             <h2 class="center">Medium Pizza</h2>
             <img src="img/pizza.png" width="105">
@@ -111,10 +114,12 @@
                 Get a 30cm medium pizza that has almost everything, from scrumptious vegetables to hearty meat products. Enjoy the taste of this pizza!
             </div>
             <div class="center">
-                <button type="button" name="button" class="theButton buymedium">Buy</button>
+                <button type="submit" name="button" class="theButton buymedium">Buy</button>
             </div>
         </div>
+    </form>
     
+    <form action="/Blarge" method="Post"></form>
         <div class="box Large_pizza"> 
             <h2 class="center">Large Pizza</h2>
             <img src="img/pizza.png" width="130">
@@ -126,9 +131,11 @@
                 Get a 40cm large pizza that has almost everything, from scrumptious vegetables to hearty meat products. Enjoy the taste of this pizza!
             </div>
             <div class="center">
-                <button type="button" name="button" class="theButton buylarge">Buy</button>
+                <button type="submit" name="button" class="theButton buylarge">Buy</button>
             </div>
         </div>
+    </form>
+
     </div>
    
 

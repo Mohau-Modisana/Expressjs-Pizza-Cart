@@ -15,4 +15,36 @@ function buysmall(){
     }
 }
 
+function buymedium(){
+    let medium=0;
+    let mediumprice=89.00;
+    var nummediumpizza=0;
+
+    medium +=mediumprice;
+    nummediumpizza ++;
+
+    return{
+        medium,
+        nummediumpizza
+    }
+}
+
+function buylarge(){
+    let large=0;
+    let largeprice=129.00;
+    var numlargepizza=0;
+
+    large += largeprice;
+    numlargepizza ++;
+
+    return{
+        large,
+        numlargepizza
+    }
+}
+
+function totals(){
+    return smll + medium + large;
+}
+
 }

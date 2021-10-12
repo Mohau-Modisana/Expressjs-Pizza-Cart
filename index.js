@@ -16,6 +16,12 @@ app.set('view engine', 'handlebars')
 app.get("/", function(req, res){
     res.render('home');
   });
+
+app.post('/Bsmall', function(req, res){
+
+
+});
+
   
   let PORT = process.env.PORT || 3007;
   
