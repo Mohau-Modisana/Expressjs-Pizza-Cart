@@ -1,44 +1,48 @@
 <link rel="stylesheet" href="css/style.css">
 
    <h1 class="align">Perfect Pizza</h1>
-
-<div class="box center cart">
+{{#if smallcost}}
+<div class="box center cart ">
         <h1>Pizza Cart</h1>
         <div class="center">
             <img src="img/crt.gif" width="100" >
         </div>
+
+    <form action="/smllplus" method="POST"></form>
        <div>
         <span>
            Small
         </span>
         <span class="smallnum">
-            (0)  
+            ({{numSmallpizza}})   
            </span>
             <span>
-                <button type="button" name="button" class="radioplus1 rad tab">+</button>
+                <button type="submit" name="button" class="radioplus1 rad tab">+</button>
             </span>
             <span>
-                <button type="button" name="button" class="radiominus1 rad tab4">-</button>
+                <button type="submit" name="button" class="radiominus1 rad tab4">-</button>
             </span>
            <span class="smallTotal">
-            R0.00   
+            R {{smallcost}}   
            </span>
        </div>
+    </form>
+
        <div>
         <span>
             Medium
         </span>
         <span class="mediumnum">
-            (0)  
+            ({{nummediumpizza}})  
            </span>
         <span>
-            <button type="button" name="button" class="radioplus2 rad tab1">+</button>
+            <button type="submit" name="button" class="radioplus2 rad tab1">+</button>
         </span>
         <span>
-            <button type="button" name="button" class="radiominus2 rad tab4">-</button>
+            <button type="submit" name="button" class="radiominus2 rad tab4">-</button>
         </span>
             <span class="mediumTotal">
-             R0.00   
+             R {{mediumcost}}  
             </span>
        </div>
        <div>
@@ -46,23 +50,23 @@
             Large
         </span>
         <span class="largenum">
-            (0)  
+            ({{numlargepizza}})    
            </span>
         <span>
-            <button type="button" name="button" class="radioplus3 rad tab2">+</button>
+            <button type="submit" name="button" class="radioplus3 rad tab2">+</button>
         </span>
         <span>
-            <button type="button" name="button" class="radiominus3 rad tab4">-</button>
+            <button type="submit" name="button" class="radiominus3 rad tab4">-</button>
         </span>
             <span class="largeTotal">
-             R0.00   
+             R {{largecost}}   
             </span>
        </div>    
         <span>
             Total Cost
         </span>
             <span class="totalcosts">
-                R0.00   
+              R {{totalcost}}   
             </span>
        
     <form action="/Cart" method="Post">
@@ -71,20 +75,9 @@
         </div>
     </form>
 
-    {{!-- <div class="hide ">
-       <div>
-           <span>
-         Payment amount:      
-           </span>
-           <span>
-        <input type="text"  name="" value="" placeholder="Total Cost including tip" class="amountpaid">
-            </span>
-       </div>
-       <div>
-        <button type="button" name="button" class="theButton pay paybox">Pay</button>
-       </div>
-    </div> --}}
+
 </div>
+{{/if}}
 
     <div class="All_Pizzas">
 
