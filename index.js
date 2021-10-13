@@ -32,27 +32,47 @@ let mediumprice=0;
 var countermedium=0;
 let largeprice=0;
 var counterlarge=0;
+let totalprice=0;
   
 
 app.post('/Bsmall', function(req, res){
   countersmall =countersmall + 1,
   smallprice =smallprice + 49.00,
+  totalprice= smallprice + mediumprice + largeprice,
   console.log(smallprice);
   res.render("home", {
 
     numSmallpizza: countersmall,
-    smallcost: smallprice.toFixed(2)
+    smallcost: smallprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
  })
 });
 
 app.post('/smllplus', function(req, res){
   countersmall =countersmall + 1,
   smallprice =smallprice + 49.00,
+  totalprice= smallprice + mediumprice + largeprice,
   console.log(smallprice);
   res.render("home", {
 
     numSmallpizza: countersmall,
-    smallcost: smallprice.toFixed(2)
+    smallcost: smallprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
+ })
+});
+
+app.post('/smllminus', function(req, res){
+  if(smallprice>0){
+  countersmall =countersmall - 1,
+  smallprice =smallprice - 49.00,
+  totalprice= smallprice + mediumprice + largeprice,
+  console.log(smallprice);
+  }
+  res.render("home", {
+
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
  })
 
 });

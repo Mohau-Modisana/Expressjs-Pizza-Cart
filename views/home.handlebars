@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="css/style.css">
 
    <h1 class="align">Perfect Pizza</h1>
-{{#if smallcost}}
+{{#if totalcost}}
 <div class="box center cart ">
         <h1>Pizza Cart</h1>
         <div class="center">
             <img src="img/crt.gif" width="100" >
         </div>
 
-    <form action="/smllplus" method="POST"></form>
+    <form action="/smllplus1" method="POST">
        <div>
         <span>
            Small
@@ -17,10 +17,10 @@
             ({{numSmallpizza}})   
            </span>
             <span>
-                <button type="submit" name="button" class="radioplus1 rad tab">+</button>
+                <button type="submit" name="button1" class="radioplus1 rad tab" formaction="/smllplus">+</button>
             </span>
             <span>
-                <button type="submit" name="button" class="radiominus1 rad tab4">-</button>
+                <button type="submit" name="button2" class="radiominus1 rad tab4" formaction="/smllminus">-</button>
             </span>
            <span class="smallTotal">
             R {{smallcost}}   
