@@ -2,7 +2,7 @@
 body{
   background-color: rgb(237, 173, 100);
   font-family: cursive;
-  background-image: url(ani.jpg);
+  background-image: url('ani.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode:overlay;

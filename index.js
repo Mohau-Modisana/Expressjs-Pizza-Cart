@@ -81,7 +81,7 @@ app.post('/Bmedium', function(req, res){
 
   countermedium =countermedium + 1,
   mediumprice =mediumprice+ 89.00,
-console.log(mediumprice);
+ console.log(mediumprice);
   res.render("home", {
 
     nummediumpizza: countermedium,

@@ -28,6 +28,7 @@
        </div>
     </form>
 
+<form action="/mdiumplus1" method="POST">
        <div>
         <span>
             Medium
@@ -36,15 +37,18 @@
             ({{nummediumpizza}})  
            </span>
         <span>
-            <button type="submit" name="button" class="radioplus2 rad tab1">+</button>
+            <button type="submit" name="button" class="radioplus2 rad tab1" formaction="/mdiumplus">+</button>
         </span>
         <span>
-            <button type="submit" name="button" class="radiominus2 rad tab4">-</button>
+            <button type="submit" name="button" class="radiominus2 rad tab4" formaction="/mdiumminus">-</button>
         </span>
             <span class="mediumTotal">
              R {{mediumcost}}  
             </span>
        </div>
+</form>
+
+<form action="/lrgeplus1" method="POST"></form>
        <div>
         <span>
             Large
@@ -53,15 +57,17 @@
             ({{numlargepizza}})    
            </span>
         <span>
-            <button type="submit" name="button" class="radioplus3 rad tab2">+</button>
+            <button type="submit" name="button" class="radioplus3 rad tab2" formaction="/lrgeplus">+</button>
         </span>
         <span>
-            <button type="submit" name="button" class="radiominus3 rad tab4">-</button>
+            <button type="submit" name="button" class="radiominus3 rad tab4" formaction="/lrgeminus">-</button>
         </span>
             <span class="largeTotal">
              R {{largecost}}   
             </span>
-       </div>    
+       </div> 
+    </form>
+
         <span>
             Total Cost
         </span>
