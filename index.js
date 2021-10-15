@@ -44,6 +44,10 @@ app.post('/Bsmall', function(req, res){
 
     numSmallpizza: countersmall,
     smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
     totalcost: totalprice.toFixed(2)
  })
 });
@@ -57,6 +61,10 @@ app.post('/smllplus', function(req, res){
 
     numSmallpizza: countersmall,
     smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
     totalcost: totalprice.toFixed(2)
  })
 });
@@ -72,6 +80,10 @@ app.post('/smllminus', function(req, res){
 
     numSmallpizza: countersmall,
     smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
     totalcost: totalprice.toFixed(2)
  })
 
@@ -81,11 +93,108 @@ app.post('/Bmedium', function(req, res){
 
   countermedium =countermedium + 1,
   mediumprice =mediumprice+ 89.00,
+  totalprice= smallprice + mediumprice + largeprice,
  console.log(mediumprice);
   res.render("home", {
 
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
     nummediumpizza: countermedium,
-    mediumcost: mediumprice.toFixed(2)
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
+ })
+});
+
+app.post('/mdiumplus', function(req, res){
+
+  countermedium =countermedium + 1,
+  mediumprice =mediumprice+ 89.00,
+  totalprice= smallprice + mediumprice + largeprice,
+ console.log(mediumprice);
+  res.render("home", {
+
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
+ })
+});
+
+app.post('/mdiumminus', function(req, res){
+  if(mediumprice>0){
+  countermedium =countermedium - 1,
+  mediumprice =mediumprice - 89.00,
+  totalprice= smallprice + mediumprice + largeprice,
+ console.log(mediumprice);
+  }
+
+  res.render("home", {
+
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
+ })
+});
+
+app.post('/Blarge', function(req, res){
+  counterlarge =counterlarge + 1,
+  largeprice =largeprice + 129.00,
+  totalprice= smallprice + mediumprice + largeprice,
+  console.log(largeprice);
+  res.render("home", {
+
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
+ })
+});
+
+app.post('/lrgeplus', function(req, res){
+  counterlarge =counterlarge + 1,
+  largeprice =largeprice + 129.00,
+  totalprice= smallprice + mediumprice + largeprice,
+  console.log(smallprice);
+  res.render("home", {
+
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
+ })
+});
+
+app.post('/lrgeminus', function(req, res){
+  if(largeprice>0){
+  counterlarge =counterlarge - 1,
+  largeprice =largeprice - 129.00,
+  totalprice= smallprice + mediumprice + largeprice,
+  console.log(smallprice);
+  }
+  res.render("home", {
+
+    numSmallpizza: countersmall,
+    smallcost: smallprice.toFixed(2),
+    nummediumpizza: countermedium,
+    mediumcost: mediumprice.toFixed(2),
+    numlargepizza: counterlarge, 
+    largecost: largeprice.toFixed(2),
+    totalcost: totalprice.toFixed(2)
  })
 });
 
