@@ -18,11 +18,16 @@ const pizzacart = PizzaCarts();
 app.get("/", function(req, res){
     
 
-    res.render('home');
+    res.render('login');
   });
 
 app.post('/Cart', function(req, res){
     res.render('Cart');
+
+});
+
+app.post('/login', function(req, res){
+  res.render('home');
 
 });
 
