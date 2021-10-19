@@ -10,6 +10,10 @@ app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+//importing sqlite modules
+const sqlite = require('sqlite3');
+const { open } = require('sqlite');
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars')
 
