@@ -6,14 +6,14 @@
     </div>
 <h2 class="center">Order details</h2>
 
+<form action="/login" method="Post">
     <div class="center hide">
-<form action="/details" method="post">
         <div>
             <span>
                 Name:      
             </span>
             <span>
-                <input type="text"  name="OrderName" value="" placeholder="Who's ordering" class="{{details.name}}">
+                <input type="text"  name="OrderName" value="" placeholder="Who's ordering" class="{{login.name}}">
             </span>
         </div>
 
@@ -22,7 +22,7 @@
                 Contacts:      
             </span>
             <span>
-                <input type="text"  name="Contacts" value="" placeholder="What's your Phone number" class="{{details.contacts}}">
+                <input type="text"  name="Contacts" value="" placeholder="What's your Phone number" class="{{login.contacts}}">
             </span>
         </div>
 
@@ -31,12 +31,10 @@
                 Address:  
             </span>
             <span>
-                <input type="text"  name="Address" value="" placeholder="What's your location" class="{{details.address}}">
+                <input type="text"  name="Address" value="" placeholder="What's your location" class="{{login.address}}">
             </span>
         </div>
-</form>
 
-        <form action="/login" method="Post">
         <div>
             <button type="submit" name="button" class="theButton pay paybox">Let's Order</button>
         </div>
