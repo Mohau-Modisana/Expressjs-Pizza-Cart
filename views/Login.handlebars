@@ -7,12 +7,13 @@
 <h2 class="center">Order details</h2>
 
     <div class="center hide">
+<form action="/details" method="post">
         <div>
             <span>
                 Name:      
             </span>
             <span>
-                <input type="text"  name="OrderName" value="" placeholder="Who's ordering" class="">
+                <input type="text"  name="OrderName" value="" placeholder="Who's ordering" class="{{details.name}}">
             </span>
         </div>
 
@@ -21,7 +22,7 @@
                 Contacts:      
             </span>
             <span>
-                <input type="text"  name="Contacts" value="" placeholder="What's your Phone number" class="">
+                <input type="text"  name="Contacts" value="" placeholder="What's your Phone number" class="{{details.contacts}}">
             </span>
         </div>
 
@@ -30,9 +31,10 @@
                 Address:  
             </span>
             <span>
-                <input type="text"  name="Address" value="" placeholder="What's your location" class="">
+                <input type="text"  name="Address" value="" placeholder="What's your location" class="{{details.address}}">
             </span>
         </div>
+</form>
 
         <form action="/login" method="Post">
         <div>
@@ -41,4 +43,5 @@
         </form>
 
     </div>
+
 </div>
