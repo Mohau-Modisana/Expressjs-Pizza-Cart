@@ -19,10 +19,27 @@ app.set('view engine', 'handlebars')
 
 const pizzacart = PizzaCarts();
 
-app.get("/", function(req, res){
-    
+open({
+	filename: './Costumers.db',
+	driver: sqlite.Database
+}).then(async function (db) {
 
-    res.render('login');
+	// run migrations
+
+	await db.migrate();
+
+  app.get("/", function(req, res){
+    
+    db
+    .all('select * from Costumers')
+    .then (function(Costumers){
+      console.log(Costumers);
+
+      res.render('login', {
+        Costumers
+      });
+    })
+
   });
 
 app.post('/Cart', function(req, res){
@@ -206,6 +223,12 @@ app.post('/lrgeminus', function(req, res){
     totalcost: totalprice.toFixed(2)
  })
 });
+
+	// only setup the routes once the database connection has been established
+
+})
+
+
 
   
   let PORT = process.env.PORT || 3007;
