@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //importing sqlite modules
-const sqlite = require('sqlite3');
+const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -21,7 +21,7 @@ const pizzacart = PizzaCarts();
 
 open({
 	filename: './Costumers.db',
-	driver: sqlite.Database
+	driver: sqlite3.Database
 }).then(async function (db) {
 
 	// run migrations
@@ -36,7 +36,6 @@ open({
       console.log(Costumers);
 
       res.render('login', {
-        Costumers
       });
     })
 
@@ -47,7 +46,13 @@ app.post('/Cart', function(req, res){
 
 });
 
-app.post('/login', function(req, res){
+app.post('/login', async function(req, res){
+  console.log(req.body);
+
+  const insert_login = 'insert into Costumers(Names, Contacts, Locations) values (?, ?, ?)'
+  await  db.run(insert_login, req.body.Names, req.body.Contacts, req.body.Locations);
+  
+  
   res.render('home');
 
 });
