@@ -50,7 +50,7 @@ app.post('/login', async function(req, res){
   console.log(req.body);
 
   const insert_login = 'insert into Costumers(Names, Contacts, Locations) values (?, ?, ?)'
-  await  db.run(insert_login, req.body.Names, req.body.Contacts, req.body.Locations);
+  // await  db.run(insert_login, req.body.Names, req.body.Contacts, req.body.Locations);
   
   
   res.render('home');
