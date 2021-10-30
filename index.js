@@ -30,27 +30,31 @@ open({
 
   app.get("/", function(req, res){
     
-    db
-    .all('select * from Costumers')
-    .then (function(Costumers){
-      console.log(Costumers);
+    // db
+    // .all('select * from Costumers')
+    // .then (function(Costumers){
+    //   console.log(Costumers);
 
       res.render('login', {
       });
-    })
+    // })
 
   });
 
 app.post('/Cart', function(req, res){
+
+  
     res.render('Cart');
+
 
 });
 
 app.post('/login', async function(req, res){
-  console.log(req.body);
+
+  console.log(req.body.OrderName, req.body.Contacts, req.body.Address);
 
   const insert_login = 'insert into Costumers(Names, Contacts, Locations) values (?, ?, ?)'
-  // await  db.run(insert_login, req.body.Names, req.body.Contacts, req.body.Locations);
+  await  db.run(insert_login, req.body.OrderName, req.body.Contacts, req.body.Address);
   
   
   res.render('home');
